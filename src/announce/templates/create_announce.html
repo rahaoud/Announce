@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex align-items-center min-vh-100">
+    <div class="row g-0 justify-content-center">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-group input-group-outline mb-3">
+                <label class="form-label">Title</label>
+                {{ form.user }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                <label class="form-label">Title</label>
+                {{ form.title }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                <label class="form-label">Description</label>
+                {{ form.description }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                <label class="form-label">Price</label>
+                {{ form.price }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                {{ form.thumbnail }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                {{ form.images }}
+
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                {{ form.published }}
+            </div>
+            <div class="input-group input-group-outline mb-3">
+                {{ form.tags}}
+            </div>
+            <br>
+            <input  class="btn btn-primary" type="submit" value="{{submit_text}}">
+        </form>
+    </div>
+</div>
+{% endblock %}

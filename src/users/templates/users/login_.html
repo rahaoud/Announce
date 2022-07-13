@@ -1,0 +1,26 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<form method="post">
+{% csrf_token %}
+
+    <label for="id_username" class="required">Email :</label>
+    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="255" required id="id_username">
+  </div>
+  <div class="form-row">
+
+    <label for="id_password" class="required">Mot de passe :</label>
+      <input type="password" name="password" autocomplete="current-password" required id="id_password">
+    <input type="hidden" name="next" value="/admin/">
+  </div>
+
+  <div class="submit-row">
+    <input type="submit" value="Connexion">
+  </div>
+</form>
+</body>
+</html>

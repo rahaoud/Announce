@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<title>{{ userprofile.user }}</title>
+<style>
+      .row {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        padding: 1em;
+        border: solid;
+      }
+    </style>
+{% endblock %}
+{% block body %}
+<a href="{% url 'index' %}">Home</a> &emsp14;
+<a href="{% url 'update-user-profile' id=profile.id %}">Update</a>
+<div class="row">
+    <div class="col">
+        <img src="{{ profile.thumbnail.url }}">
+        <h1>{{ profile.user }} </h1>
+        <h4>{{ profile.name }} </h4>
+        <h4>{{ profile.username }} </h4>
+
+        <h4>{{ profile.bio }} </h4>
+        <h4>{{ profile.vote_ratio }} </h4>
+    </div>
+    <div class="col">
+        <h4>{{ profile.followers_count }} </h4>
+        <h4>{{ profile.skills }} </h4>
+        <h4>{{ profile.interests }} </h4>
+        <h4>{{ profile.followers }} </h4>
+        <h4>{{ profile.email_verified }} </h4>
+        <h4>{{ profile.id }} </h4>
+    </div>
+</div>
+
+
+
+{% endblock %}

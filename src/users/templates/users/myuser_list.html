@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>User list</title>
+{% endblock %}
+{% block body%}
+<a href="{% url 'create-user' %}"><h3>Create user</h3></a>
+{% for user in myuser_list %}
+<h4>{{ user.email }}</h4>
+<a href="{% url 'detail-user' user.email %}">Detail</a>&emsp14;&emsp14;
+<a href="{% url 'update-user' user.email %}">Update</a>&emsp14;&emsp14;
+<a href="{% url 'delete-user' user.email %}">Delete</a>
+<hr>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>My user home</title>
+<style>
+      .row {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        padding: 1em;
+        border: solid;
+      }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+<h1>Hello user</h1>
+<div class="row">
+    <div class="col">
+        <a href="{% url 'create-user' %}"><h3>Create user</h3></a>
+        {% for user in user_list %}
+        <h4>{{ user.email }}</h4>
+        <a href="{% url 'detail-user' user.email %}">Detail</a>&emsp14;&emsp14;
+        <a href="{% url 'update-user' user.email %}">Update</a>&emsp14;&emsp14;
+        <a href="{% url 'delete-user' user.email %}">Delete</a>
+        <hr>
+        {% endfor %}
+
+    </div>
+
+    <div class="col">
+        <h1>User profile list</h1>
+        <a href="{% url 'create-user-profile' %}">Create profile</a>
+        {% for profile in userprofile_list %}
+        <hr>
+        <img src="{{ profile.thumbnail.url }}">
+        <h3>{{ profile.name }} </h3>
+        <h5>{{ profile.username }}</h5>
+        <h5>{{ profile.id }}</h5>
+        <h6>{{ profile.profile_pic }}</h6>
+        <p>
+            <a href="{% url 'detail-user-profile' id=profile.id %}">Detail </a>&emsp;&emsp;
+            <a href="{% url 'update-user-profile' id=profile.id%}">Update </a>&emsp;&emsp;
+            <a href="{% url 'delete-user-profile' id=profile.id %}">Delete</a>
+        </p>
+
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

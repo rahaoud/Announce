@@ -1,0 +1,24 @@
+<section id="post">
+{% for post in posts%}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ post.get_thrumbnail_url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h5 class="card-title">{{ post.title|truncatechars:25 }}</h5>
+        <p class="card-text">
+           {% for tags in post.tags.all %}
+            {{ tags.name }} >>
+            {% endfor %}
+        </p>
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{ post.created }}</small>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+  </section>

@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title %}
+<title> Delete profile</title>
+{% endblock %}
+
+{% block body %}
+<h1>Is the delete page</h1>
+<p>
+    Do you delete the {{ profile.user }}
+</p>
+<p>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+</p>
+{% endblock %}

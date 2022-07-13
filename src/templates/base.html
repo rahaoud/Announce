@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+{% block title %}
+{% endblock %}
+
+<body class="g-sidenav-show  bg-gray-200">
+
+{% include 'base/aside.html' %}
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+ {% include 'base/navbar.html' %}
+ {% block content %}
+ {% endblock %}
+</main>
+
+{% include 'base/fixed-plugin.html' %}
+{% include 'base/script.html' %}
+<!--<script type="text/javascript" src="{% static 'htmx.min.js' %}"></script>-->
+
+
+    <!-- new -->
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title> User detail</title>
+{% endblock %}
+{% block body %}
+<a href="{% url 'index-user' %}">Home</a>&emsp14;&emsp14;
+<a href="{% url 'update-user' user.email %}">Update</a>
+<h1>{{ myuser.email}}</h1>
+<h4>{{ myuser.is_admin}}</h4>
+<h4>{{ myuser.is_active}}</h4>
+<h4>{{ myuser.last_login}}</h4>
+<h4>{{ myuser.date_joined}}</h4>
+
+{% endblock %}

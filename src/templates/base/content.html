@@ -1,0 +1,35 @@
+
+<div class="row mt-4" >
+    {% for post in post_list %}
+    <div class="col-lg-4 col-md-6 mt-4 mb-4">
+        <div class="card z-index-2 " >
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+
+                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                     <img src="{{ post.get_thrumbnail_url }}" class="card-img-top " style="height: 230px; width: 100;" alt="...">
+                </div>
+            </div>
+            <div class="card-body">
+                <h6 class="mb-0 ">{{ post.title }}</h6>
+                {% for tags in post.tags.all %}
+                <p class="text-sm ">{{ tags }}</p>
+                {% endfor %}
+                <hr class="dark horizontal">
+                <div class="d-flex ">
+                    <i class="material-icons text-sm my-auto me-1">schedule</i>
+                    <p class="mb-0 text-sm">
+                        {{ post.created }} &emsp14;&emsp14;
+
+                        <a href="{% url 'post-detail' id=post.id %}">Detail</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <h1>No results</h1>
+    {% endfor %}
+</div>
+
+{% include 'base/footer.html' %}
+</div>

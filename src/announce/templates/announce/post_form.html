@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>creat post</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="colorlib.com">
+
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.css' %}">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="wrapper">
+	<form action="" id="wizard" method="post" enctype="multipart/form-data"  name="monformulaire">
+		{% csrf_token %}
+		<!-- SECTION 1 -->
+		<h2></h2>
+		<section>
+			<div class="inner">
+				<div class="image-holder" style="background-color: #cfc7b8;">
+					<div class="container">
+						<div class="box header">
+							<img src="{% static 'images/form-wizard-1.jpg' %}" alt="" />
+							<h2>Nera Parian Mohn</h2>
+							<h4>Norway</h4>
+						</div>
+					</div>
+					<!-- <img src="images/form-wizard-1.jpg" alt=""> -->
+				</div>
+				<div class="form-content" >
+					<div class="form-header">
+						<h3>Registration</h3>
+					</div>
+					<p>Please enter basic information</p>
+
+					<div class="form-row">
+
+						<div class="select">
+							<div class="form-holder">
+								<div class="select-control">Your country</div>
+								<i class="zmdi zmdi-caret-down"></i>
+							</div>
+							<ul class="dropdown">
+								<li rel="United States">United States</li>
+								<li rel="United Kingdom">United Kingdom</li>
+								<li rel="Viet Nam">Viet Nam</li>
+							</ul>
+						</div>
+						<div class="select">
+							<div class="form-holder">
+								<div class="select-control">Your country</div>
+								<i class="zmdi zmdi-caret-down"></i>
+							</div>
+							<ul class="dropdown">
+								<li rel="United States">United States</li>
+								<li rel="United Kingdom">United Kingdom</li>
+								<li rel="Viet Nam">Viet Nam</li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-holder w-100">
+							{{ form.title }}
+							<!--							<input type="text" placeholder="Address" class="form-control">-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 -->
+		<h2></h2>
+		<section>
+			<div class="inner">
+				<div class="image-holder" style="background-color: #a4bac9;">
+					<div class="container">
+						<div class="box header">
+							<img src="{% static 'images/form-wizard-1.jpg' %}" alt="" />
+							<h2>Nera Parian Mohn</h2>
+							<h4>Norway</h4>
+						</div>
+					</div>
+					<!-- <img src="images/form-wizard-2.jpg" alt=""> -->
+				</div>
+				<div class="form-content">
+					<div class="form-header">
+						<h3>Registration</h3>
+					</div>
+					<p>Please enter details</p>
+					<div class="form-row">
+						<div class="form-holder w-100">
+							{{ form.description }}
+							<!--							<textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>-->
+						</div>
+					</div>
+
+
+					<div class="form-row">
+						<div class="select">
+							<div class="form-holder">
+								{{ form.price }}
+								<!--								<div class="select-control">Your country</div>-->
+								<!--								<i class="zmdi zmdi-caret-down"></i>-->
+							</div>
+							<!--							<ul class="dropdown">-->
+							<!--								<li rel="United States">United States</li>-->
+							<!--								<li rel="United Kingdom">United Kingdom</li>-->
+							<!--								<li rel="Viet Nam">Viet Nam</li>-->
+							<!--							</ul>-->
+						</div>
+						<div class="form-holder"></div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- SECTION 3 -->
+		<h2></h2>
+		<section>
+			<div class="inner">
+				<div class="image-holder" style="background-color: #849963;">
+					<div class="container">
+						<div class="box header">
+							<img src="{% static 'images/form-wizard-1.jpg' %}" alt="" />
+							<h2>Nera Parian Mohn</h2>
+							<h4>Norway</h4>
+						</div>
+					</div>
+					<!-- <img src="images/form-wizard-3.jpg" alt=""> -->
+				</div>
+				<div class="form-content">
+					<div class="form-header">
+						<h3>Registration</h3>
+					</div>
+					<p>Please choose the pictures</p>
+					<div class="form-row">
+						<!--							<style>-->
+						<!--									input[id="file"] {-->
+						<!--	display: block;-->
+						<!--	}-->
+						<!--	.imageThumb {-->
+						<!--	max-height: 75px;-->
+						<!--	border: 2px solid;-->
+						<!--	padding: 1px;-->
+						<!--	cursor: pointer;-->
+						<!--	}-->
+						<!--	.pip {-->
+						<!--	display: inline-block;-->
+						<!--	margin: 10px 10px 0 0;-->
+						<!--	}-->
+						<!--	.remove {-->
+						<!--	display: block;-->
+						<!--	/* background: #444; */-->
+						<!--	/* border: 1px solid black; */-->
+						<!--	color: rgb(226, 14, 14);-->
+						<!--	text-align: center;-->
+						<!--	cursor: pointer;-->
+						<!--	}-->
+						<!--	.remove:hover {-->
+						<!--	background: white;-->
+						<!--	color: black;-->
+						<!--	}-->
+						<!--									</style>-->
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+						<div container>
+
+							<label for="file">
+								+ add
+							</label>
+							{{ form.thumbnail }}
+						</div>
+						<!--						<script type="text/javascript">-->
+						<!--									$(document).ready(function() {-->
+						<!--	if (window.File && window.FileList && window.FileReader) {-->
+						<!--	$("#files").on("change", function(e) {-->
+						<!--		var files = e.target.files,-->
+						<!--		filesLength = files.length;-->
+						<!--		for (var i = 0; i < filesLength; i++) {-->
+						<!--				var f = files[i]-->
+						<!--		var fileReader = new FileReader();-->
+						<!--		fileReader.onload = (function(e) {-->
+						<!--			var file = e.target;-->
+						<!--			$("<span class=\"pip\">" +-->
+						<!--			"<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +-->
+						<!--			"<br/><span class=\"remove\">x</span>" +-->
+						<!--			"</span>").insertAfter("#files");-->
+						<!--			$(".remove").click(function(){-->
+						<!--			$(this).parent(".pip").remove();-->
+						<!--			});-->
+
+						<!--			// Old code here-->
+						<!--			/*$("<img></img>",-->
+						<!--			class: "imageThumb",-->
+						<!--			src: e.target.result,-->
+						<!--			title: file.name + " | Click to remove"-->
+						<!--			}).insertAfter("#files").click(function(){$(this).remove();});*/-->
+
+						<!--		});-->
+						<!--		fileReader.readAsDataURL(f);-->
+						<!--		}-->
+						<!--	});-->
+						<!--	} else {-->
+						<!--	alert("Your browser doesn't support to File API")-->
+						<!--	}-->
+						<!--	});-->
+						<!--									</script>-->
+					</div>
+					<div class="form-row">
+
+						<div class="form-row">
+
+							<style>
+
+
+.image-upload{
+  position: relative;
+
+  left: calc(50% - 1.5rem);
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+
+  border-width : 1px;
+  border-color : #999;
+  border-style: dashed !important;
+  border-radius: 0.25rem !important;
+}
+
+input[type="file"] {
+	display: none;
+	color: blue;
+	border: 2px solid;
+	}
+	.imageThumb {
+	height: 75px;
+	width: 75px;
+	border: 1px solid;
+	border-radius: 0.25rem !important;
+	border-style: dashed !important;
+	padding: 1px;
+	cursor: pointer;
+	}
+	.pip {
+	display: inline-block;
+	margin: 10px 10px 0 0;
+	}
+	.remove {
+	display: block;
+
+	color: rgb(226, 14, 14);
+	text-align: center;
+	cursor: pointer;
+	}
+	.remove:hover {
+	background: white;
+	color: black;
+	}
+									</style>
+
+
+							<div class="field" align="left">
+									<span>
+										<label for="files"><img  class="image-upload" src="{% static 'images/photo-camera-gray.svg' %}" alt=""></label>
+										{{ form.images }}
+										<!--										<input type="file" id="files" name="files[]" multiple />-->
+									</span>
+							</div>
+							<script type="text/javascript">
+									$(document).ready(function() {
+	if (window.File && window.FileList && window.FileReader) {
+	$("#files").on("change", function(e) {
+		var files = e.target.files,
+		filesLength = files.length;
+		for (var i = 0; i < filesLength; i++) {
+				var f = files[i]
+		var fileReader = new FileReader();
+		fileReader.onload = (function(e) {
+			var file = e.target;
+			$("<span class=\"pip\">" +
+			"<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+			"<br/><span class=\"remove\">x</span>" +
+			"</span>").insertAfter("#files");
+			$(".remove").click(function(){
+        $(this).parent(".pip").remove();
+        $('#files').val("");
+      });
+
+			
+			// Old code here
+			/*$("<img></img>", 
+			class: "imageThumb",
+			src: e.target.result,
+			title: file.name + " | Click to remove"
+			}).insertAfter("#files").click(function(){$(this).remove();});*/
+			
+		});
+		fileReader.readAsDataURL(f);
+		}
+	});
+	} else {
+	alert("Your browser doesn't support to File API")
+	}
+	});
+									</script>
+						</div>
+					</div>
+					<div class="checkbox-circle mt-24">
+						<label>
+							<input type="checkbox" checked>  Please accept <a href="#">terms and conditions ?</a>
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+	</form>
+</div>
+
+<!-- JQUERY -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+<!-- JQUERY STEP -->
+<script src="{% static 'js/jquery.steps.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>
